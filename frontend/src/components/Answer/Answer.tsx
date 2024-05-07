@@ -303,8 +303,8 @@ export const Answer = ({ answer, onCitationClicked }: Props) => {
                     role="button">
                     <span>
                       {parsedAnswer.citations.length > 1
-                        ? parsedAnswer.citations.length + ' references'
-                        : '1 reference'}
+                        ? parsedAnswer.citations.length + ' Quellen'
+                        : '1 Quelle'}
                     </span>
                   </Text>
                   <FontIcon
@@ -317,7 +317,7 @@ export const Answer = ({ answer, onCitationClicked }: Props) => {
             </Stack.Item>
           )}
           <Stack.Item className={styles.answerDisclaimerContainer}>
-            <span className={styles.answerDisclaimer}>Diese Antwort enthält KI-generierte Inhalte.</span>
+            <span className={styles.answerDisclaimer}>Diese Antwort stützt sich auf das Abstimmungsbüchlein.</span>
           </Stack.Item>
         </Stack>
         {chevronIsExpanded && (
