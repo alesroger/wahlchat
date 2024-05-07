@@ -103,7 +103,10 @@ const Chat = () => {
   }, [appStateContext?.state.chatHistoryLoadingState])
 
   const getUserInfoList = async () => {
-    if (!AUTH_ENABLED) {
+    setShowAuthMessage(false)
+    return
+    /*
+    {if (!AUTH_ENABLED) {
       setShowAuthMessage(false)
       return
     }
@@ -113,6 +116,7 @@ const Chat = () => {
     } else {
       setShowAuthMessage(false)
     }
+    */
   }
 
   let assistantMessage = {} as ChatMessage
