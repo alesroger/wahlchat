@@ -76,7 +76,7 @@ const Layout = () => {
               <h1 className={styles.headerTitle}>{ui?.title}</h1>
             </Link>
           </Stack>
-          <Stack horizontal tokens={{ childrenGap: 4 }} className={styles.shareButtonContainer}>
+          {/*<Stack horizontal tokens={{ childrenGap: 4 }} className={styles.shareButtonContainer}>
             {appStateContext?.state.isCosmosDBAvailable?.status !== CosmosDBStatus.NotConfigured && (
               <HistoryButton
                 onClick={handleHistoryClick}
@@ -84,7 +84,7 @@ const Layout = () => {
               />
             )}
             {ui?.show_share_button && <ShareButton onClick={handleShareClick} text={shareLabel} />}
-          </Stack>
+          </Stack>*/}
         </Stack>
       </header>
       <Outlet />
