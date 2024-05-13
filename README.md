@@ -80,7 +80,7 @@ To enable chat history, you will need to set up CosmosDB resources. The ARM temp
 - `AZURE_COSMOSDB_ACCOUNT`
 - `AZURE_COSMOSDB_DATABASE`
 - `AZURE_COSMOSDB_CONVERSATIONS_CONTAINER`
-- `AZURE_COSMOSDB_ACCOUNT_KEY`
+- `AZURE_COSMOSDB_ACCOUNT_KEY` (copy private key from Azure Cosmos DB account > Settings > Keys)
 
 As above, start the app with `start.cmd`, then visit the local running app at http://127.0.0.1:50505. Or, just run the backend in debug mode using the VSCode debug configuration in `.vscode/launch.json`.
 
