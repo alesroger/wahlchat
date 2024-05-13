@@ -911,6 +911,7 @@ def get_frontend_settings():
 async def add_conversation():
     authenticated_user = get_authenticated_user_details(request_headers=request.headers)
     user_id = authenticated_user["user_principal_id"]
+    user_id = request.headers.get("Referer", "0_no_key_provided")
 
     ## check request for conversation_id
     request_json = await request.get_json()
@@ -969,6 +970,7 @@ async def add_conversation():
 async def update_conversation():
     authenticated_user = get_authenticated_user_details(request_headers=request.headers)
     user_id = authenticated_user["user_principal_id"]
+    user_id = request.headers.get("Referer", "0_no_key_provided")
 
     ## check request for conversation_id
     request_json = await request.get_json()
@@ -1020,6 +1022,7 @@ async def update_conversation():
 async def update_message():
     authenticated_user = get_authenticated_user_details(request_headers=request.headers)
     user_id = authenticated_user["user_principal_id"]
+    user_id = request.headers.get("Referer", "0_no_key_provided")
     cosmos_conversation_client = init_cosmosdb_client()
 
     ## check request for message_id
@@ -1067,6 +1070,7 @@ async def delete_conversation():
     ## get the user id from the request headers
     authenticated_user = get_authenticated_user_details(request_headers=request.headers)
     user_id = authenticated_user["user_principal_id"]
+    user_id = request.headers.get("Referer", "0_no_key_provided")
 
     ## check request for conversation_id
     request_json = await request.get_json()
@@ -1112,6 +1116,7 @@ async def list_conversations():
     offset = request.args.get("offset", 0)
     authenticated_user = get_authenticated_user_details(request_headers=request.headers)
     user_id = authenticated_user["user_principal_id"]
+    user_id = request.headers.get("Referer", "0_no_key_provided")
 
     ## make sure cosmos is configured
     cosmos_conversation_client = init_cosmosdb_client()
@@ -1135,6 +1140,7 @@ async def list_conversations():
 async def get_conversation():
     authenticated_user = get_authenticated_user_details(request_headers=request.headers)
     user_id = authenticated_user["user_principal_id"]
+    user_id = request.headers.get("Referer", "0_no_key_provided")
 
     ## check request for conversation_id
     request_json = await request.get_json()
@@ -1188,6 +1194,7 @@ async def get_conversation():
 async def rename_conversation():
     authenticated_user = get_authenticated_user_details(request_headers=request.headers)
     user_id = authenticated_user["user_principal_id"]
+    user_id = request.headers.get("Referer", "0_no_key_provided")
 
     ## check request for conversation_id
     request_json = await request.get_json()
@@ -1233,6 +1240,7 @@ async def delete_all_conversations():
     ## get the user id from the request headers
     authenticated_user = get_authenticated_user_details(request_headers=request.headers)
     user_id = authenticated_user["user_principal_id"]
+    user_id = request.headers.get("Referer", "0_no_key_provided")
 
     # get conversations for user
     try:
@@ -1278,6 +1286,7 @@ async def clear_messages():
     ## get the user id from the request headers
     authenticated_user = get_authenticated_user_details(request_headers=request.headers)
     user_id = authenticated_user["user_principal_id"]
+    user_id = request.headers.get("Referer", "0_no_key_provided")
 
     ## check request for conversation_id
     request_json = await request.get_json()
