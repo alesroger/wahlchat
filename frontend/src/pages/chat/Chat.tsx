@@ -770,7 +770,7 @@ const Chat = () => {
                     <div className={styles.chatMessageGpt}>
                       <Answer
                         answer={{
-                          answer: 'Generiere Antwort...',
+                          answer: 'Generating answer...',
                           citations: []
                         }}
                         onCitationClicked={() => null}
@@ -788,13 +788,13 @@ const Chat = () => {
                   horizontal
                   className={styles.stopGeneratingContainer}
                   role="button"
-                  aria-label="Generieren beenden"
+                  aria-label="Stop generating"
                   tabIndex={0}
                   onClick={stopGenerating}
                   onKeyDown={e => (e.key === 'Enter' || e.key === ' ' ? stopGenerating() : null)}>
                   <SquareRegular className={styles.stopGeneratingIcon} aria-hidden="true" />
                   <span className={styles.stopGeneratingText} aria-hidden="true">
-                    Antwort stoppen
+                    Stop generating
                   </span>
                 </Stack>
               )}
@@ -865,7 +865,7 @@ const Chat = () => {
               </Stack>
               <QuestionInput
                 clearOnSend
-                placeholder="Deine Frage"
+                placeholder="Type a new question..."
                 disabled={isLoading}
                 onSend={(question, id) => {
                   appStateContext?.state.isCosmosDBAvailable?.cosmosDB
@@ -888,7 +888,7 @@ const Chat = () => {
                 horizontalAlign="space-between"
                 verticalAlign="center">
                 <span aria-label="Citations" className={styles.citationPanelHeader}>
-                  Quellen
+                  Citations
                 </span>
                 <IconButton
                   iconProps={{ iconName: 'Cancel' }}

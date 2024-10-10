@@ -73,14 +73,14 @@ export const Answer = ({ answer, onCitationClicked }: Props) => {
       const part_i = citation.part_index ?? (citation.chunk_id ? parseInt(citation.chunk_id) + 1 : '')
       if (truncate && citation.filepath.length > filePathTruncationLimit) {
         const citationLength = citation.filepath.length
-        citationFilename = `${citation.filepath.substring(0, 20)}...${citation.filepath.substring(citationLength - 20)} - Textteil ${part_i}`
+        citationFilename = `${citation.filepath.substring(0, 20)}...${citation.filepath.substring(citationLength - 20)} - Part ${part_i}`
       } else {
-        citationFilename = `${citation.filepath} - Textteil ${part_i}`
+        citationFilename = `${citation.filepath} - Part ${part_i}`
       }
     } else if (citation.filepath && citation.reindex_id) {
-      citationFilename = `${citation.filepath} - Textteil ${citation.reindex_id}`
+      citationFilename = `${citation.filepath} - Part ${citation.reindex_id}`
     } else {
-      citationFilename = `Textteil ${index}`
+      citationFilename = `Citation ${index}`
     }
     return citationFilename
   }
@@ -303,8 +303,8 @@ export const Answer = ({ answer, onCitationClicked }: Props) => {
                     role="button">
                     <span>
                       {parsedAnswer.citations.length > 1
-                        ? parsedAnswer.citations.length + ' Quellen'
-                        : '1 Quelle'}
+                        ? parsedAnswer.citations.length + ' references'
+                        : '1 reference'}
                     </span>
                   </Text>
                   <FontIcon
@@ -317,7 +317,7 @@ export const Answer = ({ answer, onCitationClicked }: Props) => {
             </Stack.Item>
           )}
           <Stack.Item className={styles.answerDisclaimerContainer}>
-            <span className={styles.answerDisclaimer}>Diese Antwort stützt sich auf das Abstimmungsbüchlein.</span>
+            <span className={styles.answerDisclaimer}>AI-generated content may be incorrect</span>
           </Stack.Item>
         </Stack>
         {chevronIsExpanded && (
